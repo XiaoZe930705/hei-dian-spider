@@ -1,0 +1,11 @@
+services:
+  spider:
+    build: .
+    container_name: hei-dian-spider
+    restart: unless-stopped
+    environment:
+      TZ: Asia/Taipei
+    volumes:
+      - ./data:/app/data
+    entrypoint: ["python", "spider.py"]
+    command: []

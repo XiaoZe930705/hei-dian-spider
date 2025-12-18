@@ -28,6 +28,49 @@ python spider.py
 
 停止：在終端機按 `Ctrl+C`。
 
+## Docker / Docker Compose
+
+### Docker（單機）
+
+建置：
+
+```bash
+docker build -t hei-dian-spider .
+```
+
+只跑一次（輸出到本機 `data/`）：
+
+```bash
+docker run --rm -v ${PWD}/data:/app/data hei-dian-spider --once --max-pages 60 --max-depth 3
+```
+
+常駐（啟動會先跑 1 次，之後每日排程）：
+
+```bash
+docker run -d --name hei-dian-spider -v ${PWD}/data:/app/data hei-dian-spider
+```
+
+### Docker Compose（推薦）
+
+本專案提供 `compose.yml`：
+
+```bash
+docker compose up -d --build
+docker compose logs -f
+```
+
+只跑一次：
+
+```bash
+docker compose run --rm spider --once --max-pages 60 --max-depth 3
+```
+
+停止/移除：
+
+```bash
+docker compose down
+```
+
 ## 站內多頁 + SEO 稽核（建議用法）
 
 只跑一次並輸出稽核報表（JSON + PDF）：
