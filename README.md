@@ -1,6 +1,6 @@
 # 黑點網站爬蟲（hei-dian-spider）
 
-定期爬取 https://hei-dian.com.tw/（或你指定的站點），抓取站內多頁，輸出 SEO 稽核報告（JSON + PDF），並可選擇保存原始 HTML 方便除錯與比對。
+定期爬取 https://hei-dian.com.tw/   （或你指定的站點），抓取站內多頁，輸出 SEO 稽核報告（JSON + PDF），並可選擇保存原始 HTML 方便除錯與比對。
 
 ## 功能
 
