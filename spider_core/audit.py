@@ -125,4 +125,3 @@ def evaluate_page_issues(page: dict, *, seed_url: str) -> tuple[bool, list[str]]
 
     indexable = "noindex" not in issues and (status_code == 200)
     return indexable, issues
-

@@ -55,6 +55,19 @@ def find_chromium_executable() -> tuple[str | None, str | None]:
     if chrome:
         candidates.append(("chrome", chrome))
 
+    # Linux 常見（Docker/CI）
+    google_chrome = shutil.which("google-chrome")
+    if google_chrome:
+        candidates.append(("chrome", google_chrome))
+
+    chromium = shutil.which("chromium")
+    if chromium:
+        candidates.append(("chromium", chromium))
+
+    chromium_browser = shutil.which("chromium-browser")
+    if chromium_browser:
+        candidates.append(("chromium", chromium_browser))
+
     program_files = os.environ.get("ProgramFiles") or r"C:\Program Files"
     program_files_x86 = os.environ.get("ProgramFiles(x86)") or r"C:\Program Files (x86)"
 
@@ -98,6 +111,8 @@ def render_pdf_from_html(html_path: str, pdf_path: str) -> bool:
         exe,
         "--headless=new",
         "--disable-gpu",
+        "--disable-dev-shm-usage",
+        "--no-sandbox",
         f"--print-to-pdf={os.path.abspath(pdf_path)}",
         file_url,
     ]
@@ -121,4 +136,3 @@ def render_pdf_from_html(html_path: str, pdf_path: str) -> bool:
         return False
 
     return os.path.exists(pdf_path) and os.path.getsize(pdf_path) > 0
-

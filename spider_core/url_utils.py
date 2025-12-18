@@ -122,4 +122,3 @@ def safe_filename_from_url(url: str) -> str:
     base = base.strip(" .") or "page"
     digest = hashlib.sha1(url.encode("utf-8")).hexdigest()[:10]
     return f"{host}_{base}_{digest}.html"
-

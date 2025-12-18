@@ -1,6 +1,6 @@
 # 黑點網站爬蟲（hei-dian-spider）
 
-定期爬取 https://hei-dian.com.tw/（或你指定的站點），抓取站內多頁，輸出 SEO 稽核報告（JSON + PDF），並可選擇保存原始 HTML 方便除錯與比對。
+定期爬取 https://hei-dian.com.tw/  （或你指定的站點），抓取站內多頁，輸出 SEO 稽核報告（JSON + PDF），並可選擇保存原始 HTML 方便除錯與比對。
 
 ## 功能
 
@@ -49,7 +49,7 @@ python spider.py --once --max-pages 60 --max-depth 3
 ## 專案結構（模組化）
 
 - `spider.py`：CLI 入口（參數解析、排程）
-- `hei_dian_spider/`：核心模組
+- `spider_core/`：核心模組
   - `crawler.py`：站內爬取 + 稽核流程
   - `audit.py`：SEO 欄位抽取與 issue 判斷
   - `http_client.py`：抓取 HTML、PDF 輸出（Edge/Chrome headless）
@@ -91,7 +91,7 @@ python spider.py --once --max-pages 60 --max-depth 3
 
 ## 自訂設定
 
-- 預設目標網址：`hei_dian_spider/config.py` 的 `TARGET_URL`
+- 預設目標網址：`spider_core/config.py` 的 `TARGET_URL`
 - 排程：執行時用 `--interval-days` / `--daily-at` 調整
 - 報告輸出：`data/` 資料夾
 

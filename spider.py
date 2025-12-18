@@ -14,7 +14,7 @@ import time
 
 import schedule
 
-from hei_dian_spider.config import (
+from spider_core.config import (
     TARGET_URL,
     DEFAULT_MAX_PAGES,
     DEFAULT_MAX_DEPTH,
@@ -22,7 +22,7 @@ from hei_dian_spider.config import (
     DEFAULT_TIMEOUT_SECONDS,
     DEFAULT_SAVE_HTML_LIMIT,
 )
-from hei_dian_spider.crawler import crawl_site_and_audit
+from spider_core.crawler import crawl_site_and_audit
 
 
 logging.basicConfig(

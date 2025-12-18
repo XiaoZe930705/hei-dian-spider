@@ -220,4 +220,3 @@ def analyze_security(seed_url: str, final_url: str, html: str, resp) -> dict:
             "external_script_missing_sri_count": sri_missing_external_scripts,
         },
     }
-

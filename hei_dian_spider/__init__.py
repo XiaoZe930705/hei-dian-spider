@@ -1,2 +1,0 @@
-"""hei-dian-spider package."""
-

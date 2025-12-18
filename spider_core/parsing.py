@@ -25,4 +25,3 @@ def extract_visible_text(soup: BeautifulSoup) -> str:
         text = soup.get_text(separator=" ", strip=True)
 
     return re.sub(r"\s+", " ", text).strip()
-
